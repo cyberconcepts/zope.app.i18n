@@ -61,7 +61,8 @@ class TranslationDomain(BTreeContainer, SimpleTranslationDomain, Contained):
         self._unregisterMessageCatalog(object.language, name)
 
     def translate(self, msgid, mapping=None, context=None,
-                  target_language=None, default=None):
+                  target_language=None, default=None,
+                  msgid_plural=None, default_plural=None, number=None):
         """See interface `ITranslationDomain`"""
         if target_language is None and context is not None:
             avail_langs = self.getAvailableLanguages()
